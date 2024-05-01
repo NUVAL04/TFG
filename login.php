@@ -35,6 +35,7 @@ else if (isset($_GET['logout'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="icon" href="Imagenes/logo.jpg" type="image/png">
     <style>
     
     body{

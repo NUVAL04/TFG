@@ -55,6 +55,7 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valoraciones</title>
+    <link rel="icon" href="Imagenes/logo.jpg" type="image/png">
     <style>
          body{
         background-color: #ADD8E6;
