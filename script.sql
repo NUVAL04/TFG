@@ -35,3 +35,14 @@ Gracias!","19","2","-1","1");
 INSERT INTO valoraciones VALUES("17","2007-11-23","RE:Duda curso","Ahora mismo te hago llegar un buen ejemplo!!!","18","4","16","0");
 INSERT INTO valoraciones VALUES("18","2007-11-23","Por fin es viernes!","Feliz fin de semana a todos!!!
 Volved en buen estado el lunes :-)","18","5","-1","0");
+
+CREATE TABLE citas (
+  num_cita int(10) unsigned NOT NULL auto_increment,
+  fecha DATETIME NOT NULL DEFAULT '1970-01-01' ,
+  nombre varchar(50) NOT NULL DEFAULT '' ,
+  num_usuario int(10) unsigned NOT NULL DEFAULT '0' ,
+  telefono int(10) unsigned NOT NULL DEFAULT '0' ,
+  tipo varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (num_cita),
+  UNIQUE num_cita (num_cita)
+);

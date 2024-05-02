@@ -19,6 +19,8 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
 }
 }   
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

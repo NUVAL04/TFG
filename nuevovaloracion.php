@@ -1,3 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Valoración</title>
+    <link rel="icon" href="Imagenes/logo.jpg" type="image/png">
+    <style>
+         body{
+        background-color: #ADD8E6;
+    }
+    
+    #correcto{
+        color:blue;
+    }
+
+    button{
+        width: 15%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #007bff;
+        cursor:pointer;
+    }
+
+    #volver{
+        text-decoration:none;
+        color:#FFFF;
+        font-size:120%;
+    }
+
+    #label{
+        font-size:120%;
+    }
+
+    .container {
+        width: 50%;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    #asunto,textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #aceptar, #borrar {
+        padding: 10px 20px;
+        font-size:110%;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #mensajeerror{
+        font-size:120%;
+        color:blue;
+    }
+    </style>
+</head>
+<body>
+
 <?php
 
     include ("funciones.php");
@@ -84,80 +159,8 @@
     echo "<BR><CENTER><button><a id='volver' href='valoraciones.php'>Volver a las valoraciones</a></button><br></CENTER><br><br>";
     imprimir_piepagina();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Valoración</title>
-    <link rel="icon" href="Imagenes/logo.jpg" type="image/png">
-    <style>
-         body{
-        background-color: #ADD8E6;
-    }
-    
-    #correcto{
-        color:blue;
-    }
 
-    button{
-        width: 15%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #007bff;
-        cursor:pointer;
-    }
 
-    #volver{
-        text-decoration:none;
-        color:#FFFF;
-        font-size:120%;
-    }
-
-    #label{
-        font-size:120%;
-    }
-
-    .container {
-        width: 50%;
-        margin: 0 auto;
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-    #asunto,textarea,
-    select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    #aceptar, #borrar {
-        padding: 10px 20px;
-        font-size:110%;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    #mensajeerror{
-        font-size:120%;
-        color:blue;
-    }
-    </style>
-</head>
-<body>
     <script>
         document.getElementById('form1').addEventListener('submit', function(){
             event.preventDefault();

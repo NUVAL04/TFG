@@ -25,7 +25,6 @@
     background-image: url('Imagenes/corte4.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff;
     text-align: left;
     padding: 160px 50px;
 }

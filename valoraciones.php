@@ -1,3 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valoraciones</title>
+    <link rel="icon" href="Imagenes/logo.jpg" type="image/png">
+    <style>
+         body{
+        background-color: #ADD8E6;
+    }
+
+    td{
+        font-size:150%;
+    }
+
+    th{
+        font-size:150%;
+        padding: 7px;
+    }
+    
+    h1{
+        text-align:center;
+        color: blue;
+    }
+
+    button{
+        width: 15%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #007bff;
+        cursor:pointer;
+    }
+    #añadir{
+        font-size:120%;
+        text-decoration:none;
+        color:#FFFF;
+    }
+    </style>
+</head>
+<body>
+
+
 <?php
     include 'funciones.php';
     imprimir_cabecera();
@@ -49,47 +93,7 @@ else
 
     imprimir_piepagina();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valoraciones</title>
-    <link rel="icon" href="Imagenes/logo.jpg" type="image/png">
-    <style>
-         body{
-        background-color: #ADD8E6;
-    }
 
-    td{
-        font-size:150%;
-    }
 
-    th{
-        font-size:150%;
-        padding: 7px;
-    }
-    
-    h1{
-        text-align:center;
-        color: blue;
-    }
-
-    button{
-        width: 15%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #007bff;
-        cursor:pointer;
-    }
-    #añadir{
-        font-size:120%;
-        text-decoration:none;
-        color:#FFFF;
-    }
-    </style>
-</head>
-<body>
 </body>
 </html>
