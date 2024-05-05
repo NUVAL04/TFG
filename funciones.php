@@ -40,14 +40,6 @@ function conectar_BD()
         return $id_conexion->lastInsertId();
      }
 
-     function boton_ficticio($caption,$url)
-     {
-        return "<TABLE border=1 CELLSPACING=0 CELLPADDING=3 bgcolor=black>
-                             <TR><TD bgcolor='white'>
-                                <FONT size ='-1' face='arial, helvetica'><a href = '$url'>$caption</A></FONT>
-                             </TD></TR></TABLE>";
-     }
-     
      function imprimir_cabecera()
      {
         echo "<header class='cabecera' style='background-color: #ffffff;padding: 10px 0;'>
@@ -64,9 +56,9 @@ function conectar_BD()
      function imprimir_piepagina(){
         echo "<footer style='background-color:#FFFF; padding: 20px; text-align: center;'>
         <div style='margin-bottom: 20px;'>
-          <a href='#' style='text-decoration: none; color: #333; margin: 0 10px;'>Facebook</a>
-          <a href='#' style='text-decoration: none; color: #333; margin: 0 10px;'>Twitter</a>
-          <a href='#' style='text-decoration: none; color: #333; margin: 0 10px;'>Instagram</a>
+          <a target='_blank' href='https://www.facebook.com/login/?locale=es_ES' style='text-decoration: none; color: #333; margin: 0 10px;'>Facebook</a>
+          <a target='_blank' href='https://twitter.com/' style='text-decoration: none; color: #333; margin: 0 10px;'>Twitter</a>
+          <a target='_blank' href='https://www.instagram.com/' style='text-decoration: none; color: #333; margin: 0 10px;'>Instagram</a>
 
         </div>
         <p style='font-size: 14px; color: #666; margin-bottom: 10px;'>Síguenos en nuestras redes sociales para estar al tanto de las últimas novedades.</p>

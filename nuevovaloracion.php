@@ -49,7 +49,7 @@
     #asunto,textarea,
     select {
         width: 100%;
-        padding: 10px;
+        padding: 5px 0px;
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -126,14 +126,13 @@
         <h2>Responde a la valoración</h2>
         <form id='form1' method='post' action='nuevovaloracion.php'>
         <b><label id='label'>Asunto: </label></b><input id='asunto' type='text' name='asunto' value='' size='40' maxlength='50'><br><br>
-        <b><label id='label'>Contenido: </label></b><textarea id='contenido' name='contenido' rows='20' cols='60' wrap=on></textarea><br><br>
+        <b><label id='label'>Contenido: </label></b><textarea id='contenido' name='contenido' rows='20' cols='60'></textarea><br><br>
         <input type='hidden' name='num_user' value='".$_SESSION['num_user']."'>
         <input type='hidden' name='num_valoracion_origen' value='".$_REQUEST['num_valoracion']."'>
         <input id='aceptar' type='submit' name='enviar' value='Enviar valoración'>
         <input id='borrar' type='reset' name='Borrar' value='Borrar datos'><br><br>
         <label id='mensajeerror'></label>
-        </form>
-</center></div>";
+        </form></center></div>";
     }
     else
     //Formulario en el que se piden las estrellas es decir ha accedido desde el boton añadir nueva
@@ -141,7 +140,7 @@
             <h2>Publica tu valoración</h2>
             <form id='form1' method='post' action='nuevovaloracion.php'>
             <b><label id='label'>Asunto: </label></b><input id='asunto' type='text' name='asunto' value='' size='40' maxlength='50'><br><br>
-            <b><label id='label'>Contenido: </label></b><textarea id='contenido' name='contenido' rows='20' cols='60' wrap=on></textarea><br><br>
+            <b><label id='label'>Contenido: </label></b><textarea id='contenido' name='contenido' rows='20' cols='60'></textarea><br><br>
             <input type='hidden' name='num_user' value='".$_SESSION['num_user']."'>
             <b><label id='label'>Estrellas: </label></b><select name='estrellas'>
             <option value='1'>1</option>
@@ -153,8 +152,7 @@
             <input id='aceptar' type='submit' name='enviar' value='Enviar valoración'>
             <input id='borrar' type='reset' name='Borrar' value='Borrar datos'><br><br>
             <label id='mensajeerror'></label>
-            </form>
-    </center></div>";
+            </form></center></div>";
 
     echo "<BR><CENTER><button><a id='volver' href='valoraciones.php'>Volver a las valoraciones</a></button><br></CENTER><br><br>";
     imprimir_piepagina();
