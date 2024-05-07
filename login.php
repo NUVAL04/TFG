@@ -3,30 +3,28 @@
 include("funciones.php");
 
 conectar_BD();
- if (isset($_REQUEST['login']) && isset($_REQUEST['password'])){
-    
+
+    if (isset($_REQUEST['login']) && isset($_REQUEST['password'])){    
     $consulta="select nombre, num_usuario from usuarios 
         WHERE login='".$_REQUEST['login']."' and password='".$_REQUEST['password']."' ";
     
     $resultado = ejecuta_SQL($consulta);
-    if ($resultado->rowCount()>0) {
-        $myrow = $resultado->fetchAll();
+        if ($resultado->rowCount()>0) {
+            $errorloguin="";
+            $myrow = $resultado->fetchAll();
         //Ahora activamos la sesion con el id del usuario nuevo
-        session_start();
-        $_SESSION['num_user'] = $myrow[0][1]; //es el num_usuario de select
+            session_start();
+            $_SESSION['num_user'] = $myrow[0][1]; //es el num_usuario de select
         
         //Saltamos de pagina
-        $host  = $_SERVER['HTTP_HOST'];
-        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-        $extra = 'home.php';
-        header("Location: http://$host$uri/$extra");  
-    }
+            $host  = $_SERVER['HTTP_HOST'];
+            $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+            $extra = 'home.php';
+            header("Location: http://$host$uri/$extra");  
+        }
     else
-        echo "<BR><BR><center>El usuario y/o la contraseña no coinciden.<br><br></center>";
-}
-else if (isset($_GET['logout'])){
-    $_SESSION[] = array();
-}
+        $errorloguin="<p id='loguinerror'>El usuario y/o la contraseña no coinciden.</p>";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -40,70 +38,72 @@ else if (isset($_GET['logout'])){
     
     body{
         background-color: #ADD8E6;
-            margin-top: 150px;
+        margin-top: 150px;
     }
 
-.container {
-    width: 400px;:
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-}
+    .container {
+        width: 400px;:
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-.formulario {
-    width: 100%;
-}
+    .formulario {
+        width: 100%;
+    }
 
-.label {
-    padding-left: 10px;
-}
+    .label {
+        padding-left: 10px;
+    }
 
-#mensajeerror{
+    #mensajeerror, #loguinerror{
         font-size:120%;
         color:blue;
     }
 
-#username, #password {
-    width: 70%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+    #username, #password {
+        width: 70%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
-#aceptar{
-    width: 60%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size:100%;
-}
-.boton {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    #aceptar{
+        width: 60%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size:100%;
+    }
+    .boton {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-.boton:hover {
-    background-color: #0056b3;
-}
+    .boton:hover {
+        background-color: #0056b3;
+    }
 
-.enlace {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-}
-.enlace:hover {
-    text-decoration: underline;
-}
-p{
-    font-size:120%;
-}
+    .enlace {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    .enlace:hover {
+        text-decoration: underline;
+    }
+
+    p{
+        font-size:120%;
+    }
     </style>
 </head>
 <body>
@@ -125,6 +125,11 @@ p{
         <input id="aceptar" type="submit" name="pulsa" value="Aceptar" class="boton">
     </form>
     <br>
+    <?php
+        if(isset($errorloguin)){
+            echo $errorloguin;
+        }
+    ?>
     <label id="mensajeerror"></label>
     <br>
     <p>¿Aún no tienes cuenta? <a href="register.php" class="enlace">Regístrate</a></p>

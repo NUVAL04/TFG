@@ -15,8 +15,7 @@
         $resultado = ejecuta_SQL($consulta);
 
         if ($resultado->rowCount()>0){
-           echo "<BR><BR><center>
-            <p id='fallo'>Esta hora ya está reservada. Intente coger otra.<p></center><br>";
+           $errorcita="<p id='errorcita'>Esta hora ya está reservada. Intente coger otra.<p>";
         }
         else{
             $fecha= $_REQUEST['fecha'];
@@ -41,7 +40,8 @@
         background-color: #ADD8E6;
     }
     .container {
-        width: 400px;:
+        display: flex;
+        width: 900px;
         margin: 0 auto;
         background-color: #ffffff;
         padding: 20px;
@@ -72,19 +72,30 @@
         font-size:120%;
     }
 
-    #mensajeerror{
+    #mensajeerror, #errorcita{
         font-size:120%;
         color:blue;
     }
+    .formulario {
+        flex: 1; //hace que un elemento flex se expanda para ocupar todo el espacio disponible dentro de su contenedor flexible en la dirección principal.
+    }   
 
+    .imagen {
+        flex: 1;
+    }
+    
+    img{
+        margin-top:10%;
+    }
    </style> 
 </head>
 <body>
-<?php
-    imprimir_cabecera();
-?>
+    <?php
+        imprimir_cabecera();
+    ?>
 
 <br><br><center><div class="container">
+<div class="formulario">
 <h3>RESERVA TU CITA</h3>
     <form id="form1" action="citas.php" method="post">
         <label>Nombre:</label>
@@ -101,16 +112,27 @@
         echo "<input type='hidden' name='num_user' value='".$_SESSION['num_user']."'>"
         ?>
 
-        <label>Tipo de pelado:</label>
+        <label>Servicio:</label>
         <select id="tipo" name="tipo">
-            <option value="Corte de pelo">Corte de pelo</option>
+            <option value="Corte de cabello">Corte de cabello</option>
             <option value="Tinte">Tinte</option>
-            <option value="Peinado">Peinado</option>
+            <option value="Corte y Barba">Corte y Barba</option>
             <option value="Lavado y secado">Lavado y secado</option>
+            <option value="Peinado">Peinado</option>
         </select><br><br>
+
+        <?php
+            if(isset($errorcita)){
+                echo $errorcita;
+            }
+        ?>
         <label id="mensajeerror"></label><br>
     <button id="reservar" type="submit">Reservar cita</button>
     </form>
+    </div>
+    <div class="imagen">
+        <img src="Imagenes/corte1.jpg" alt="Imagen" style="width: 100%; height:80%;">
+    </div>
 </div></center><br><br>
 
 

@@ -9,8 +9,7 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
 
     //Si contamos las filas de la consulta y obtenemos un valor distinto de 0 quiere decir que ya esta ese usuario metido en la base de datos.
     if ($resultado->rowCount()>0)
-           echo "<BR><BR><center>
-            <p id='fallo'>No se ha podido crear el usuario. Cambie los valores.<p></center><br>";
+          $errorregister="<p id='fallo'>No se ha podido crear el usuario. Cambie los valores.<p>";
     else   
     {
         $consulta="INSERT INTO usuarios VALUES (NULL,'".$_REQUEST['nombre']."','".$_REQUEST['login']."','".$_REQUEST['password']."','".$_REQUEST['email']."')";
@@ -41,7 +40,7 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
     border-radius: 10px;
     }
 
-    #mensajeerror{
+    #mensajeerror, #errorregister{
         font-size:120%;
         color:blue;
     }
@@ -57,7 +56,7 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
+    }
 
     #botones {
     margin-top:25px;
@@ -76,10 +75,11 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
     color: #007bff;
     font-weight: bold;
     font-size:120%;
-}
-a:hover {
-    text-decoration: underline;
-}
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
     </style>
 </head>
 <body>
@@ -100,6 +100,12 @@ a:hover {
          <td><input id="botones" type='submit' name='Alta' value='Dar de Alta'></td>
          <td><input id="botones" type='reset' name='Borrar' value='Borrar datos'></td></tr>            
     </table><br>
+
+    <?php
+        if(isset($errorregister)){
+            echo $errorregister;
+        }
+    ?>
     <label id="mensajeerror"></label>
     </form>
     <br><br><a href='login.php'>Volver a Inicio de Sesión</a>

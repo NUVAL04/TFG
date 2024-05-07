@@ -39,7 +39,6 @@
         background-color: #f9f9f9;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
@@ -88,9 +87,6 @@
     conectar_BD();
     imprimir_cabecera();
         
-    $fecha=date("Y-m-d");
-    $array_fecha=explode ("-",$fecha);
-    $fecha_modificada="$array_fecha[2]/$array_fecha[1]/$array_fecha[0]";
 
   //Este if hace que no se entre al contenido php de este if en el que se inserta los valores en la bd hasta que js valide el formulario y lo envie.
   //Asi evitamos errores de undefined.  
@@ -104,6 +100,7 @@
 
         //Si el existe el campo estrellas ejecutamos una consulta. Sino ejecutamos otra y asignamos 0 estrellas a la respuesta.
         if (isset($_REQUEST['estrellas'])){
+            //Funcion NOW() devuelve la fecha actual
         $consulta="INSERT INTO valoraciones values(NULL,NOW(),'".$_REQUEST['asunto']."', '".str_replace("'", "\'", $_REQUEST['contenido'])."','".$_SESSION['num_user']."', '".$_REQUEST['estrellas']."','$num_valoracion_origen', 0)";
         $datos=ejecuta_SQL($consulta);
         }

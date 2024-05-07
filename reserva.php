@@ -61,13 +61,12 @@
             echo "<br><br><center><table><thead><th colspan='2'>Datos de la reserva</th></thead>";
             foreach ($matriz as $myrow) {	
                 list($num_cita, $fecha, $nombre, $num_usuario, $telefono, $tipo)=$myrow;
-                $fecha = "2024-06-24 15:00:00";
                 $fecha_modificada = date("d-m-Y H:i:s", strtotime($fecha));
                 echo "<tr><td><b>Número cita:</b></td><td bgcolor='white' align='center'>$num_cita</td></tr>
                       <tr><td><b>Nombre:</b></td><td bgcolor='white' align='center'>$nombre</td></tr>
                       <tr><td><b>Fecha y hora:</b></td><td bgcolor='white' align='center'>$fecha_modificada</td></tr>
-                      <tr><td><b>Telefono:</b></td><td bgcolor='white' align='center'>$telefono</td></tr>
-                      <tr><td><b>Tipo:</b></td><td bgcolor='white' align='center'>$tipo</td></tr>";       
+                      <tr><td><b>Teléfono:</b></td><td bgcolor='white' align='center'>$telefono</td></tr>
+                      <tr><td><b>Servicio:</b></td><td bgcolor='white' align='center'>$tipo</td></tr>";       
             }
             echo "</table></center><br><br>";
         } else {

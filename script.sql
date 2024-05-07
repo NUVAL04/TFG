@@ -12,8 +12,8 @@ CREATE TABLE usuarios (
   UNIQUE num_usuario (num_usuario,nombre,login,password)
 );
 
-INSERT INTO usuarios VALUES("18","Pedro","pedro","a","pedro@email.es");
-INSERT INTO usuarios VALUES("19","Maria","maria","a","maria@nadie.com");
+INSERT INTO usuarios VALUES("32","Alvaro","Alvaronv","vazquez1","alvaro@gmail.com");
+INSERT INTO usuarios VALUES("33","Paco","Pacojr","Paquito12","paco@hotmail.com");
 
 CREATE TABLE valoraciones (
   num_valoracion int(10) unsigned NOT NULL auto_increment,
@@ -28,13 +28,9 @@ CREATE TABLE valoraciones (
   UNIQUE num_valoracion (num_valoracion)
 );
 
-INSERT INTO valoraciones VALUES("14","2007-11-23","Hola!","Acabo de llegar al foro y me parece muy util. Un saludo a tod@s!","18","4","-1","1");
-INSERT INTO valoraciones VALUES("15","2007-11-23","RE:Hola!","Hola, Pedro! A mi tambien me parece de gran utilidad.","19","3","14","0");
-INSERT INTO valoraciones VALUES("16","2007-11-23","Duda curso","Acabo de llegar al curso de PHP y estoy un poco perdida con los objetos, me podeis enviar alg�n ejemplo?
-Gracias!","19","2","-1","1");
-INSERT INTO valoraciones VALUES("17","2007-11-23","RE:Duda curso","Ahora mismo te hago llegar un buen ejemplo!!!","18","4","16","0");
-INSERT INTO valoraciones VALUES("18","2007-11-23","Por fin es viernes!","Feliz fin de semana a todos!!!
-Volved en buen estado el lunes :-)","18","5","-1","0");
+INSERT INTO valoraciones VALUES("47","2024-04-23","Repetiría","Fui porque tenia un cumpleaños y me dejaron el pelo muy bien y fue barato","32","5","-1","0");
+INSERT INTO valoraciones VALUES("48","2024-05-05","No fue lo que esperaba","Fueron muy amables pero me hicieron un destrozo en la cabeza","33","3","-1","0");
+
 
 CREATE TABLE citas (
   num_cita int(10) unsigned NOT NULL auto_increment,
@@ -46,3 +42,6 @@ CREATE TABLE citas (
   PRIMARY KEY (num_cita),
   UNIQUE num_cita (num_cita)
 );
+
+INSERT INTO citas VALUES("18", "2024-05-21 15:00:00", "Raquel", "31", "623547895", "Tinte");
+INSERT INTO citas VALUES("19", "2024-05-21 14:00:00", "Alvaro", "32", "645869871", "Corte y Barba");
