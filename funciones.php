@@ -34,12 +34,7 @@ function conectar_BD()
 		}
 		return $resultado;
 	}
-
-    function insert_id() {
-        global $id_conexion;
-        return $id_conexion->lastInsertId();
-     }
-
+   
      function imprimir_cabecera()
      {
         echo "<header class='cabecera' style='background-color: #ffffff;padding: 10px 0;'>
