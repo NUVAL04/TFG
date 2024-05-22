@@ -1,4 +1,4 @@
--- Active: 1704898813628@@127.0.0.1@3306@tfg
+-- Active: 1704898813628@@127.0.0.1@3306
 SET NAMES UTF8;
 CREATE DATABASE IF NOT EXISTS TFG;
 USE TFG;
@@ -25,7 +25,8 @@ CREATE TABLE valoraciones (
   num_valoracion_origen int(10) DEFAULT '-1' ,
   num_respuestas int(6) unsigned DEFAULT '0' ,
   PRIMARY KEY (num_valoracion),
-  UNIQUE num_valoracion (num_valoracion)
+  UNIQUE num_valoracion (num_valoracion),
+  CONSTRAINT fk_num_usuario FOREIGN KEY (num_usuario) REFERENCES usuarios(num_usuario)
 );
 
 INSERT INTO valoraciones VALUES("47","2024-04-23","Repetiría","Fui porque tenia un cumpleaños y me dejaron el pelo muy bien y fue barato","32","5","-1","0");
@@ -40,8 +41,9 @@ CREATE TABLE citas (
   telefono int(10) unsigned NOT NULL DEFAULT '0' ,
   tipo varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (num_cita),
-  UNIQUE num_cita (num_cita)
+  UNIQUE num_cita (num_cita),
+  CONSTRAINT fk_num_usuario_cita FOREIGN KEY (num_usuario) REFERENCES usuarios(num_usuario)
 );
 
-INSERT INTO citas VALUES("18", "2024-05-21 15:00:00", "Raquel", "31", "623547895", "Tinte");
+INSERT INTO citas VALUES("18", "2024-05-21 15:00:00", "Raquel", "33", "623547895", "Tinte");
 INSERT INTO citas VALUES("19", "2024-05-21 14:00:00", "Alvaro", "32", "645869871", "Corte y Barba");
