@@ -1,7 +1,7 @@
 <?php
 
 include("funciones.php");
-
+session_start();
 conectar_BD();
 
     if (isset($_REQUEST['login']) && isset($_REQUEST['password'])){    
@@ -13,7 +13,6 @@ conectar_BD();
             $errorloguin="";
             $myrow = $resultado->fetchAll();
         //Ahora activamos la sesion con el id del usuario nuevo
-            session_start();
             $_SESSION['num_user'] = $myrow[0][1]; //es el num_usuario de select
         
         //Saltamos de pagina
@@ -38,7 +37,7 @@ conectar_BD();
     
     body{
         background-color: #ADD8E6;
-        margin-top: 150px;
+        margin-top: 10%;
     }
 
     .container {
@@ -75,7 +74,6 @@ conectar_BD();
         padding: 15px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        font-size:100%;
     }
     .boton {
         padding: 10px 20px;
@@ -85,6 +83,7 @@ conectar_BD();
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        font-size:100%;
     }
 
     .boton:hover {
@@ -133,7 +132,19 @@ conectar_BD();
     <label id="mensajeerror"></label>
     <br>
     <p>¿Aún no tienes cuenta? <a href="register.php" class="enlace">Regístrate</a></p>
-</div>
+</div><br><br>
+
+    <?php
+    if(isset($_SESSION['num_user'])){
+        echo '<form action="login.php" method="post">
+        <input id="logout" type="submit" name="logout" value="Cerrar Sesión" class="boton">
+        </form>';
+    }
+    if (isset($_POST['logout'])) {
+        session_destroy();
+        header("Location: login.php");
+    }
+    ?>
 </center>
 
 <!--Importante la ubicacion del script. Tiene que estar aqui despues el HTML para que valga-->

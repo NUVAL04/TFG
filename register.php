@@ -30,7 +30,7 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
     <style>
          body{
         background-color: #ADD8E6;
-        margin-top: 150px;
+        margin-top: 10%;
     }
     .container {
     width: 400px;:
