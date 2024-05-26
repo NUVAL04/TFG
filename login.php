@@ -15,11 +15,14 @@ conectar_BD();
         //Ahora activamos la sesion con el id del usuario nuevo
             $_SESSION['num_user'] = $myrow[0][1]; //es el num_usuario de select
         
-        //Saltamos de pagina
+            if($_REQUEST['login']== "admin" && $_REQUEST['password']=="usuario1"){
+                header("Location: admin.php");
+            } else{
             $host  = $_SERVER['HTTP_HOST'];
             $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
             $extra = 'home.php';
             header("Location: http://$host$uri/$extra");  
+            }
         }
     else
         $errorloguin="<p id='loguinerror'>El usuario y/o la contraseña no coinciden.</p>";

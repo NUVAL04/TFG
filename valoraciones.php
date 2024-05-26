@@ -55,11 +55,9 @@
         header("Location: http://$host$uri/$extra");  
     }
     conectar_BD(); 
-    $consulta="SELECT login, password FROM usuarios WHERE num_usuario=".$_SESSION['num_user'];
-    $resultado=ejecuta_SQL($consulta);
     
     echo "<br><h1>Valoraciones aportadas por los usuarios</h1><br>";
-    if ($resultado->rowCount()>0) {
+  
         $consulta="SELECT num_valoracion, fecha, asunto, nombre, estrellas, num_respuestas
             FROM valoraciones M, usuarios U WHERE M.num_usuario=U.num_usuario and num_valoracion_origen<0";
         $resultado=ejecuta_SQL($consulta);
@@ -87,9 +85,6 @@
         echo "<br><button>";
        echo "<a id='añadir' href='nuevovaloracion.php'>Añadir Valoración</a>";
     echo "</button><br><br>";
-    }
-else
-    echo "<br><br><center><h3>No hay mensajes que mostrar</h3><br><br>";
 
     imprimir_piepagina();
 ?>
