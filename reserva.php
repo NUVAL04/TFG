@@ -53,7 +53,7 @@
         conectar_BD();
 
         imprimir_cabecera(); 
-        $consulta = "SELECT * FROM citas ORDER BY num_cita DESC LIMIT 1";
+        $consulta = "SELECT * FROM citas WHERE num_usuario=".$_SESSION['num_user']." ORDER BY num_cita DESC LIMIT 1";
         $resultado = ejecuta_SQL($consulta);
         if ($resultado->rowCount() > 0) {
             $matriz = $resultado->fetchAll();

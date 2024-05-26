@@ -45,5 +45,5 @@ CREATE TABLE citas (
   CONSTRAINT fk_num_usuario_cita FOREIGN KEY (num_usuario) REFERENCES usuarios(num_usuario)
 );
 
-INSERT INTO citas VALUES("18", "2024-05-21 15:00:00", "Raquel", "33", "623547895", "Tinte");
+INSERT INTO citas VALUES("20", "2024-05-21 15:00:00", "Paco", "33", "623547895", "Tinte");
 INSERT INTO citas VALUES("19", "2024-05-21 14:00:00", "Alvaro", "32", "645869871", "Corte y Barba");
