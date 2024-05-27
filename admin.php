@@ -11,6 +11,12 @@ include 'funciones.php';
         header("Location: http://$host$uri/$extra");  
     }
     conectar_BD();
+
+    if(isset($_POST['num_cita'])) {
+        $num_cita = $_POST['num_cita'];
+        $consulta = 'DELETE FROM citas WHERE num_cita = '.$num_cita;
+        $resultado=ejecuta_SQL($consulta);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -61,6 +67,7 @@ include 'funciones.php';
                 <th bgcolor='blue'><FONT color='white' face='arial, helvetica'>Fecha</FONT></th>
                 <th bgcolor='blue'><FONT color='white' face='arial, helvetica'>Teléfono</FONT></th>
                 <th bgcolor='blue'><FONT color='white' face='arial, helvetica'>Tipo</FONT></th>
+                <th bgcolor='blue'colspan='2'><FONT color='white' face='arial, helvetica'>Operaciones</FONT></th>
             </TR>";
 
             foreach ($matriz as $myrow) {	
@@ -71,6 +78,18 @@ include 'funciones.php';
                     <TD bgcolor='white' align='center'>$fecha</TD>
                     <TD bgcolor='white' align='center'>$telefono</TD>
                     <TD bgcolor='white' align='center'>$tipo</TD>
+                    <TD bgcolor='white' align='center'>
+                        <form style='display:inline;' method='POST' action='editar.php'>
+                            <input type='hidden' name='num_cita' value='$num_cita'>
+                            <input type='submit' value='Editar'>
+                        </form>
+                    </TD>
+                    <TD bgcolor='white' align='center'>
+                        <form style='display:inline;' method='POST' action='admin.php'>
+                            <input type='hidden' name='num_cita' value='$num_cita'>
+                            <input type='submit' name='borrar' value='Borrar' onclick=\"return confirm('¿Estás seguro de que deseas borrar esta cita?');\">
+                        </form>
+                    </TD>
                 </TR>";
             }
             echo "</table><br><br>";
