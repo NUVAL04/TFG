@@ -6,7 +6,7 @@ CREATE TABLE usuarios (
   num_usuario int(10) unsigned NOT NULL auto_increment,
   nombre varchar(30) NOT NULL DEFAULT '' ,
   login varchar(20) NOT NULL DEFAULT '' ,
-  password varchar(12) NOT NULL DEFAULT '' ,
+  password varchar(255) NOT NULL DEFAULT '' ,
   email varchar(30) NOT NULL DEFAULT '' ,
   PRIMARY KEY (num_usuario),
   UNIQUE num_usuario (num_usuario,nombre,login,password)
@@ -14,6 +14,7 @@ CREATE TABLE usuarios (
 
 INSERT INTO usuarios VALUES("32","Alvaro","Alvaronv","vazquez1","alvaro@gmail.com");
 INSERT INTO usuarios VALUES("33","Paco","Pacojr","Paquito12","paco@hotmail.com");
+INSERT INTO usuarios VALUES("34","root","admin","usuario1","admin@gmail.com");
 
 CREATE TABLE valoraciones (
   num_valoracion int(10) unsigned NOT NULL auto_increment,
