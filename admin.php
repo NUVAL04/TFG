@@ -79,7 +79,7 @@ include 'funciones.php';
                     <TD bgcolor='white' align='center'>$telefono</TD>
                     <TD bgcolor='white' align='center'>$tipo</TD>
                     <TD bgcolor='white' align='center'>
-                        <form style='display:inline;' method='POST' action='adminedit.php'>
+                        <form style='display:inline;' method='POST' action='adminedit.php?num_cita=$num_cita'>
                             <input type='hidden' name='num_cita' value='$num_cita'>
                             <input type='submit' value='Editar'>
                         </form>
