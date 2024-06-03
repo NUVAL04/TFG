@@ -22,12 +22,9 @@
         color:blue;
     }
         
-    .banner {
-        background-image: url('Imagenes/corte4.jpg');
-        background-size: cover;
-        background-position: center;
-        text-align: left;
-        padding: 200px;
+    .banner img {
+        width: 100%;
+        height: 420px;
     }
 
 
@@ -50,14 +47,40 @@
         border-radius: 8px;
     }
 
-    #video {
-        padding: 2em 0;
-        text-align: center;
+    .slider-frame {
+	    width: 700px;
+        height: auto;
+	    margin:50px auto 0;
+	    overflow: hidden;
     }
 
-    #video video {
-        max-width: 80%;
-        border-radius: 8px;
+    .slider-frame ul {
+	    display: flex;
+	    padding: 0;
+	    width: 300%;
+	    animation: slide 15s infinite alternate ease-in-out; //evita animaciones bruscas.
+    }
+
+    .slider-frame li {
+	    width: 100%;
+	    list-style: none;
+    }
+
+    .slider-frame img {
+	    width: 100%;
+    }
+
+    @keyframes slide {
+     //El porcentaje del principio indica el porcentaje del tiempo indicado al slide
+	    0% {margin-left: 0;}
+	    30% {margin-left: 0;}
+	
+        //5% que falta es para que se pare
+	    35% {margin-left: -100%;} //100% de desplazamiento a la izquierda por tanto sale la segunda foto.
+	    65% {margin-left: -100%;}
+	
+	    70% {margin-left: -200%;}
+	    100% {margin-left: -200%;}
     }
 
     #ubicacion {
@@ -79,6 +102,7 @@
 ?>
     <br><br>
     <section class="banner">
+        <img src="Imagenes/SMARTPELU.png">
     </section>
 
     <section id="precios">
@@ -107,12 +131,14 @@
         </div>
     </section>
 
-    <section id="video">
-        <h1>Formas de trabajar</h1>
-        <video controls>
-            <source src="videos/video.mp4" type="video/mp4">
-        </video>
-    </section>
+        <h1>Satisfacemos vuestras necesidades</h1>
+        <div class="slider-frame">
+            <ul>
+                <li><img src="Imagenes/foto3.jpg" alt="corte 1"></li>
+                <li><img src="Imagenes/foto1.jpg" alt="corte 2"></li>
+                <li><img src="Imagenes/foto2.jpg" alt="corte 3"></li>
+            </ul>
+        </div>
 
     <section id="ubicacion">
         <h1>Nuestra ubicación</h1>
