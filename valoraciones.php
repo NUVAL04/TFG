@@ -57,7 +57,8 @@
     conectar_BD(); 
     
     echo "<br><h1>Valoraciones aportadas por los usuarios</h1><br>";
-  
+        
+        //Consulta que coje dos tablas puesto que pide información de dos tablas y además deja fuera las que son respuestas.
         $consulta="SELECT num_valoracion, fecha, asunto, nombre, estrellas, num_respuestas
             FROM valoraciones M, usuarios U WHERE M.num_usuario=U.num_usuario and num_valoracion_origen<0";
         $resultado=ejecuta_SQL($consulta);

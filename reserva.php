@@ -53,6 +53,7 @@
         conectar_BD();
 
         imprimir_cabecera(); 
+        //Limit uno para que solo coja la última. Order DESC hace que coja siempre la cita en que num_cita sea más grande
         $consulta = "SELECT * FROM citas WHERE num_usuario=".$_SESSION['num_user']." ORDER BY num_cita DESC LIMIT 1";
         $resultado = ejecuta_SQL($consulta);
         if ($resultado->rowCount() > 0) {

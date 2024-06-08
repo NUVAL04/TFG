@@ -58,7 +58,7 @@
 	    display: flex;
 	    padding: 0;
 	    width: 300%;
-	    animation: slide 15s infinite alternate ease-in-out; //evita animaciones bruscas.
+	    animation: slide 15s infinite alternate ease-in-out; /*evita animaciones bruscas.*/
     }
 
     .slider-frame li {
@@ -71,12 +71,12 @@
     }
 
     @keyframes slide {
-     //El porcentaje del principio indica el porcentaje del tiempo indicado al slide
+      /*El porcentaje del principio indica el porcentaje del tiempo indicado al slide */
 	    0% {margin-left: 0;}
 	    30% {margin-left: 0;}
 	
-        //5% que falta es para que se pare
-	    35% {margin-left: -100%;} //100% de desplazamiento a la izquierda por tanto sale la segunda foto.
+        /*5% que falta es para que se pare */
+	    35% {margin-left: -100%;} /*100% de desplazamiento a la izquierda por tanto sale la segunda foto.*/
 	    65% {margin-left: -100%;}
 	
 	    70% {margin-left: -200%;}

@@ -33,11 +33,11 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
         margin-top: 10%;
     }
     .container {
-    width: 400px;:
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+        width: 400px;:
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
     }
 
     #mensajeerror, #errorregister{
@@ -51,30 +51,30 @@ if (isset($_REQUEST['nombre']) && isset($_REQUEST['login']) && isset($_REQUEST['
     }
 
     #nombre, #username, #contrasena, #email {
-    width: 90%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+        width: 90%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
     #botones {
-    margin-top:25px;
-    margin-left:30px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size:100%;
+        margin-top:25px;
+        margin-left:30px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size:100%;
     }
 
     a{
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    font-size:120%;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        font-size:120%;
     }
 
     a:hover {

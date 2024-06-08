@@ -140,7 +140,7 @@
     <script>
         flatpickr("#fecha", {
             enableTime:true,
-            minDate: "today",
+            minDate: new Date().fp_incr(1), //primer dia que se puede coger cita es el dia siguiente
             dateFormat: "Y-m-d H:i", 
             minTime: "09:00",
             maxTime: "18:00",

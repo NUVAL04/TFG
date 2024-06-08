@@ -24,7 +24,7 @@ conectar_BD();
             header("Location: http://$host$uri/$extra");  
             }
         }
-    else
+        else
         $errorloguin="<p id='loguinerror'>El usuario y/o la contraseña no coinciden.</p>";
     }
 ?>
